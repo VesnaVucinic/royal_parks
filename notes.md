@@ -4,14 +4,14 @@
 
 
 Flow
--user is greeted and offered list of Royal Parks (need scraping)
--user select park
--user sees park offers
--user is asked to select another park or exit app
+- user is greeted and offered list of Royal Parks (need scraping)
+- user select park
+- user sees park offers
+- user is asked to select another park or exit app
 
 Classes
--Park
-- Offer
--CLI
--Scraper
+- Park (responisability to know about parks and store them there)
+- Offer 
+- CLI (responsability to interact with user)
+- Scraper (responsible to getting data)
 
