@@ -13,7 +13,7 @@ class RoyalParks::CLI
     end
 
     def list_parks
-        puts 'Choose a park to see offers.'
+        puts 'Choose a park to see the offers.'
         @parks.each.with_index(1) do |park, index| 
           puts "#{index}. #{park.name}"
         end

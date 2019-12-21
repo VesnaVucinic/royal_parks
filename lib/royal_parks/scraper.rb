@@ -9,9 +9,9 @@ class RoyalParks::Scraper
         name = park.css("h4.white-text").text
         description = park.css("p.small").text
         url = park.css("a").attr("href") 
-        puts name
-        puts description
-        puts url
+        #puts name
+        #puts description
+        #puts url
         RoyalParks::Park.new(name, description, url)
       end 
     end
