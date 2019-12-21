@@ -2,7 +2,7 @@ class RoyalParks::CLI
 
     def call
         puts "Welcome to the Royal Parks of London!"
-        binding.pry
+        #binding.pry
     end
 
     def get_royal_parks
