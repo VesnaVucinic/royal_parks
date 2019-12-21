@@ -1,12 +1,23 @@
 class RoyalParks::Park
-    attr_accessor :name, :offers, :url 
+    attr_accessor :name, :description, :url, :offers  
     @@all = []
    
-    def initialize(name, park, url)
+    def initialize(name, description, url)
       @name = name
-      @park = park
+      @description = description
       @url = url
+      @offers = []
       # notify park about the offer
       #add_to_park
       save
     end 
+
+    def self.all 
+      @@all 
+    end
+
+    def save
+      @@all << self
+    end
+
+end
