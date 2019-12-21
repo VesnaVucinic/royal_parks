@@ -13,6 +13,7 @@ class RoyalParks::Park
     end 
 
     def self.all 
+      RoyalParks::Scraper.scrape_parks if @@all.empty?
       @@all 
     end
 

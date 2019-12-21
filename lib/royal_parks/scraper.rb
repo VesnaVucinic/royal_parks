@@ -1,3 +1,6 @@
+require "pry"
+
+
 class RoyalParks::Scraper 
  
     def self.scrape_parks 
@@ -9,11 +12,9 @@ class RoyalParks::Scraper
         name = park.css("h4.white-text").text
         description = park.css("p.small").text
         url = park.css("a").attr("href") 
-        #puts name
-        #puts description
-        #puts url
         RoyalParks::Park.new(name, description, url)
       end 
+      
     end
-    
+    #binding.pry 
 end
