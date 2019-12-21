@@ -8,6 +8,6 @@ class RoyalParks::CLI
     def get_royal_parks
         #to be scraped
         @parks = RoyalParks::Park.all
-      end
+    end
 
 end
