@@ -14,7 +14,18 @@ class RoyalParks::Scraper
         url = park.css("a").attr("href") 
         RoyalParks::Park.new(name, description, url)
       end 
-      
     end
     #binding.pry 
+    def self.scrape_offers(park)
+      #site = "https://www.royalparks.org.uk/parks/#{park.url}"
+      doc = Nokogiri::HTML(open(park.url))
+      
+      offers = doc.css("div.row div.grid-item")
+
+      offers.each do |offer|
+        name = offer.css("h4").text
+        link = offer.css("a").attr("href")  
+        RoyalParks::Offer.new(name, park, link)
+      end 
+  end
 end

@@ -17,6 +17,10 @@ class RoyalParks::Park
       @@all 
     end
 
+    def get_offers
+      RoyalParks::Scraper.scrape_offers(self) if @offers.empty?
+    end 
+
     def save
       @@all << self
     end

@@ -8,6 +8,7 @@ require_relative "./royal_parks/scraper"
 require "pry"
 require 'nokogiri'
 require 'open-uri'
+require 'colorize'
 
 
 module RoyalParks
