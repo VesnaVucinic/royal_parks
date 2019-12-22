@@ -25,5 +25,5 @@ class RoyalParks::Scraper
         RoyalParks::Offer.new(name, park, link)
       end 
   end
-   
-end
+
+end 

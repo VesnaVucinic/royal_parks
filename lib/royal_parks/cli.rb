@@ -1,40 +1,39 @@
 class RoyalParks::CLI
 
-  def call
-    puts "\n"
-    puts "Welcome to the Royal Parks of London!".colorize(:green)
-    @input = ""
-    until @input == "exit"
-      get_royal_parks
-      list_parks
-      get_user_park
-      what_next
-    end 
-    goodbye
-  end
+    def call
+      puts "\n"
+      puts "Welcome to the Royal Parks of London!".colorize(:green)
+      @input = ""
+      until @input == "exit"
+        get_royal_parks
+        list_parks
+        get_user_park
+        what_next
+      end 
+      goodbye
+    end
 
-  def get_royal_parks
-      @parks = RoyalParks::Park.all
-  end
+    def get_royal_parks
+        @parks = RoyalParks::Park.all
+    end
 
-  def list_parks
-    puts 'Here is some basic information about each Royal Park.'.colorize(:green)
-    puts "\n"
-      @parks.each.with_index(1) do |park, index| 
-        puts "#{index}. #{park.name}".colorize(:red)
-        puts park.description.colorize(:blue)
-        puts park.url
-        puts "\n"
-      end
-    puts 'Select a park by choosing a number 1 - 10 to see the park offers.'.colorize(:green)
-    puts "\n"
-  end
+    def list_parks
+      puts 'Here is some basic information about each Royal Park.'.colorize(:green)
+      puts "\n"
+        @parks.each.with_index(1) do |park, index| 
+          puts "#{index}. #{park.name}".colorize(:red)
+          puts park.description.colorize(:blue)
+          puts park.url
+          puts "\n"
+        end
+      puts 'Select a park by choosing a number 1 - 10 to see the park offers.'.colorize(:green)
+      puts "\n"
+    end
 
     def get_user_park
       chosen_park = gets.strip.to_i
       if valid_input(chosen_park, @parks)
         list_offers_for(chosen_park)
-      #list_offers_for(chosen_park) if valid_input(chosen_park, @parks)
       else
         puts "Sorry! I didn't understand command. Please select number 1 -10".colorize(:green)
         get_user_park
