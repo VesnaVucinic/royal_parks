@@ -1,5 +1,3 @@
-require "pry"
-
 
 class RoyalParks::Scraper 
  
@@ -15,9 +13,8 @@ class RoyalParks::Scraper
         RoyalParks::Park.new(name, description, url)
       end 
     end
-    #binding.pry 
+
     def self.scrape_offers(park)
-      #site = "https://www.royalparks.org.uk/parks/#{park.url}"
       doc = Nokogiri::HTML(open(park.url))
       
       offers = doc.css("div.row div.grid-item")
@@ -28,4 +25,5 @@ class RoyalParks::Scraper
         RoyalParks::Offer.new(name, park, link)
       end 
   end
+   
 end
