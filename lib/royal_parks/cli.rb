@@ -37,7 +37,7 @@ class RoyalParks::CLI
     
     def valid_input(input, data)
       input.to_i <= data.length && input.to_i > 0
-    end 
+    end
     
     def list_offers_for(chosen_park)
       park = @parks[chosen_park - 1]
@@ -50,19 +50,16 @@ class RoyalParks::CLI
         puts offer.link
         puts "\n"
       end
-      #get_user_offer(park)
     end
-    
+
     def what_next
       puts "Are you done? Type 'exit' to exit or hit key to see more parks.".colorize(:green)
       puts "\n"
       @input = gets.strip
     end 
+
+
     
-    def goodbye
-      puts "\n"
-      puts "Have great time in London Royal Parks!".colorize(:green)
-      puts "\n"
-    end 
+   
   
 end
