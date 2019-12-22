@@ -66,7 +66,7 @@ class RoyalParks::CLI
 
     def goodbye
       puts "\n"
-      puts "Have great time in London Royal Parks!".colorize(:green)
+      puts "HAVE GREAT TIME IN LONDON ROYAL PARKS!".colorize(:green)
       puts "\n"
     end 
 
