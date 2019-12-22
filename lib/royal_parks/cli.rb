@@ -32,7 +32,13 @@ class RoyalParks::CLI
 
     def get_user_park
       chosen_park = gets.strip.to_i
-      list_offers_for(chosen_park) if valid_input(chosen_park, @parks)
+      if valid_input(chosen_park, @parks)
+        list_offers_for(chosen_park)
+      #list_offers_for(chosen_park) if valid_input(chosen_park, @parks)
+      else
+        puts "Sorry! I didn't understand command. Please select number 1 -10".colorize(:green)
+        get_user_park
+      end
     end 
     
     def valid_input(input, data)
@@ -63,5 +69,5 @@ class RoyalParks::CLI
       puts "Have great time in London Royal Parks!".colorize(:green)
       puts "\n"
     end 
-    
+
 end
