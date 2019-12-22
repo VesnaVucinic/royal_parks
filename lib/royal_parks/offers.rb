@@ -6,12 +6,17 @@ class RoyalParks::Offer
     @name = name
     @park = park
     @link = link
-  save
+    add_to_park
+    save
   end 
 
   def self.all 
     @@all 
   end
+
+  def add_to_park
+    @park.offers << self unless @park.offers.include?(self)
+  end 
 
   def save
     @@all << self
