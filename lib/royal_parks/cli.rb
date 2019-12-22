@@ -58,8 +58,10 @@ class RoyalParks::CLI
       @input = gets.strip
     end 
 
-
+    def goodbye
+      puts "\n"
+      puts "Have great time in London Royal Parks!".colorize(:green)
+      puts "\n"
+    end 
     
-   
-  
 end
