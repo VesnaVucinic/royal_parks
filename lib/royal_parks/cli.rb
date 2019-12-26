@@ -1,5 +1,5 @@
 
-
+class RoyalParks::CLI
     def call
       puts "\n"
       puts "Welcome to the Royal Parks of London!".colorize(:green)
