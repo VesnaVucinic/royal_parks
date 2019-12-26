@@ -52,8 +52,8 @@ class RoyalParks::CLI
       puts "\n"
       puts "Here are the offers for #{park.name}:".colorize(:green)
       puts "\n"
-      park.offers.each.with_index(1) do |offer, idx|
-        puts "#{idx}. #{offer.name}".colorize(:red)
+      park.offers.each.with_index(1) do |offer, index|
+        puts "#{index}. #{offer.name}".colorize(:red)
         puts offer.link
         puts "\n"
       end

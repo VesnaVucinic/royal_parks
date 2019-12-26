@@ -7,8 +7,6 @@ class RoyalParks::Park
       @description = description
       @url = url
       @offers = []
-      # notify park about the offer
-      #add_to_park
       save
     end 
 

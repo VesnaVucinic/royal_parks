@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-User user is greeted and offered list of Royal Parks (need scraping). User is asked to select park and for choosen park sees park offers. After that user is asked to select another park or exit app.
+User is greeted and offered list of Royal Parks (need scraping). User is asked to select park and for choosen park sees park offers. After that user is asked to select another park or exit app.
 
 ## Development
 
