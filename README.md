@@ -1,6 +1,6 @@
 # RoyalParks
 
-Let's know more about Royal Parks in London.
+Let's find out more about Royal Parks in London.
 
 
 ## Installation

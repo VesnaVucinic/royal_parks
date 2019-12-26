@@ -1,4 +1,4 @@
-class RoyalParks::CLI
+
 
     def call
       puts "\n"
@@ -35,7 +35,9 @@ class RoyalParks::CLI
       if valid_input(chosen_park, @parks)
         list_offers_for(chosen_park)
       else
+        puts "\n"
         puts "Sorry! I didn't understand command. Please select number 1 -10".colorize(:green)
+        puts "\n"
         get_user_park
       end
     end 
