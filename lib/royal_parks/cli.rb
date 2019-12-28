@@ -1,11 +1,15 @@
 
 class RoyalParks::CLI
-    def call
+    # attr_accessor :sorted_parks    placed here becouse only porpuose is to interact with user
+    #only in CLI class will be used and every method can access it
+
+    def call #this method is my main flow
       puts "\n"
       puts "Welcome to the Royal Parks of London!".colorize(:green)
       @input = ""
       until @input == "exit"
         get_royal_parks
+        #sort_parks
         list_parks
         get_user_park
         what_next
@@ -16,6 +20,10 @@ class RoyalParks::CLI
     def get_royal_parks
         @parks = RoyalParks::Park.all
     end
+
+    #def sort_parks
+      #@sorted_parks = RoyalParks::Park.all.sort_by{|park| park.name}  #instead @parks will be @sorted_parks
+    #end
 
     def list_parks
       puts 'Here is some basic information about each Royal Park.'.colorize(:green)
@@ -31,12 +39,12 @@ class RoyalParks::CLI
     end
 
     def get_user_park
-      chosen_park = gets.strip.to_i
-      if valid_input(chosen_park, @parks)
+      chosen_park = gets.strip.to_i #chosen_park = gets.strip.to_i - 1
+      if valid_input(chosen_park, @parks) #if chosen_park.between?(1,10)
         list_offers_for(chosen_park)
       else
         puts "\n"
-        puts "Sorry! I didn't understand command. Please select number 1 -10".colorize(:green)
+        puts "Sorry! I didn't understand command. Please select number 1 -10".colorize(:green) #.\n\n"
         puts "\n"
         get_user_park
       end
@@ -47,7 +55,7 @@ class RoyalParks::CLI
     end
     
     def list_offers_for(chosen_park)
-      park = @parks[chosen_park - 1]
+      park = @parks[chosen_park - 1]  #park = @sorted_park[chosen_park] 
       park.get_offers
       puts "\n"
       puts "Here are the offers for #{park.name}:".colorize(:green)

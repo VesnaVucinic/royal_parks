@@ -1,8 +1,8 @@
-require_relative "./royal_parks/version"
-require_relative "./royal_parks/cli"
-require_relative "./royal_parks/royal_parks"
-require_relative "./royal_parks/offers"
-require_relative "./royal_parks/scraper"
+require_relative "royal_parks/version"
+require_relative "royal_parks/cli"
+require_relative "royal_parks/royal_parks"
+require_relative "royal_parks/offers"
+require_relative "royal_parks/scraper"
 
 
 require "pry"
