@@ -1,4 +1,3 @@
-
 class RoyalParks::Scraper 
  
     def self.scrape_parks 
@@ -10,7 +9,6 @@ class RoyalParks::Scraper
         name = park.css("h4.white-text").text
         description = park.css("p.small").text
         url = park.css("a").attr("href") 
-        # all above information are turned into park objects by attr accessor in royal_parks.rb
         RoyalParks::Park.new(name, description, url) 
       end  
     end
@@ -20,7 +18,7 @@ class RoyalParks::Scraper
       
       offers = doc.css("div.row div.grid-item")
 
-      offers.each do |offer| # this coming from nokogiri like offer_html
+      offers.each do |offer|
         name = offer.css("h4").text
         link = offer.css("a").attr("href")  
         RoyalParks::Offer.new(name, park, link)
