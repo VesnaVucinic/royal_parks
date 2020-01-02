@@ -17,10 +17,15 @@ class RoyalParks::CLI
         @parks = RoyalParks::Park.all
     end
 
+    def sorted_parks
+       @parks.sort_by{|park| park.name}
+    end
+
+
     def list_parks
       puts 'Here is some basic information about each Royal Park.'.colorize(:green)
       puts "\n"
-        @parks.each.with_index(1) do |park, index| 
+        sorted_parks.each.with_index(1) do |park, index| 
           puts "#{index}. #{park.name}".colorize(:red)
           puts park.description.colorize(:blue)
           puts park.url
@@ -47,7 +52,7 @@ class RoyalParks::CLI
     end
     
     def list_offers_for(chosen_park)
-      park = @parks[chosen_park - 1]  
+      park = sorted_parks[chosen_park - 1]  
       park.get_offers
       puts "\n"
       puts "Here are the offers for #{park.name}:".colorize(:green)
